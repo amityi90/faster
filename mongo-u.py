@@ -36,7 +36,8 @@ file_url = "http://35.241.167.153/big.csv"
 time_before_running = datetime.datetime.now()
 print(collection.find_one({"localid": "1397003TK7519N"}))
 print('mongo: ', datetime.datetime.now() - time_before_running)
-print(len(collection.find()))
+s = collection.find()
+print(len(s))
 
 # urllib.request.urlretrieve(file_url, file_name)
 # rows = []
