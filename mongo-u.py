@@ -1,9 +1,7 @@
 import csv
-import pandas as pd
 import math
 import datetime
 import os
-import mmap
 from pymongo import MongoClient
 import urllib.request
 
