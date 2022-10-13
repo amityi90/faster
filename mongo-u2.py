@@ -93,6 +93,8 @@ def find_address(address):
 
 # attempts $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
+push_csv_to_db()
+
 time_before_running = datetime.datetime.now()
 print(find_address("0565106VK4706F"))
 print('mongo: ', datetime.datetime.now() - time_before_running)
