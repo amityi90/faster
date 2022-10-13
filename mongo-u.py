@@ -20,8 +20,6 @@ urllib.request.urlretrieve(file_url, file_name)
 rows = []
 with open(file_name, 'r', encoding="utf8") as file:
     csvreader = csv.reader(file)
-    found_row  = []
-    time_before_running = datetime.datetime.now()
     for row in csvreader:
         address = { 
             'index' : row[0],
@@ -31,11 +29,7 @@ with open(file_name, 'r', encoding="utf8") as file:
             'city_id' : row[4],
         }
         collection.insert_one(address).inserted_id
-        if '000205600VK56E' in row:
-            print(row)
-            found_row = row
         print(row, '\n--------------\n')
-        print(found_row)
         os.system('cls')
 
 time_before_running = datetime.datetime.now()
