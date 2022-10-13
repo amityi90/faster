@@ -99,7 +99,7 @@ def find_address_from_big(address):
 
 # attempts:
 
-# push_csv_to_db()
+push_csv_to_db()
 
 results_file = open('results.txt', 'a')
 
@@ -189,6 +189,9 @@ time_before_running = datetime.datetime.now()
 print(find_address("0565106VK4706F"))
 print('mongo: ', datetime.datetime.now() - time_before_running)
 results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+
+results_file.write(f'\n**********************\n')
+
 
 results_file.close()
 
