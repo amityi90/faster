@@ -14,7 +14,7 @@ collection = db['small']
 
 
 file_name = "web_csv_files/big.csv"
-file_url = "http://35.241.167.153/small.csv"
+file_url = "http://35.241.167.153/big.csv"
 
 urllib.request.urlretrieve(file_url, file_name)
 rows = []
