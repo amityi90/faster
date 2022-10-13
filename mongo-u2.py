@@ -91,41 +91,43 @@ def find_address(address):
     collection = db[collection_name]
     return collection.find_one({"localid": address})
 
-# attempts $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+# $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-push_csv_to_db()
+# attempts:
 
-time_before_running = datetime.datetime.now()
-print(find_address("0565106VK4706F"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
+# push_csv_to_db()
 
 time_before_running = datetime.datetime.now()
 print(find_address("0565106VK4706F"))
 print('mongo: ', datetime.datetime.now() - time_before_running)
 
 time_before_running = datetime.datetime.now()
-print(find_address("0565106VK4706F"))
+print(find_address("0100074DS1700D"))
 print('mongo: ', datetime.datetime.now() - time_before_running)
 
 time_before_running = datetime.datetime.now()
-print(find_address("0565106VK4706F"))
+print(find_address("21DS00003183AA"))
 print('mongo: ', datetime.datetime.now() - time_before_running)
 
 time_before_running = datetime.datetime.now()
-print(find_address("0565106VK4706F"))
+print(find_address("02129E4VK4801A"))
 print('mongo: ', datetime.datetime.now() - time_before_running)
 
 time_before_running = datetime.datetime.now()
-print(find_address("0565106VK4706F"))
+print(find_address("02129E4VK4801A"))
+print('mongo: ', datetime.datetime.now() - time_before_running)
+
+time_before_running = datetime.datetime.now()
+print(find_address("14038A00900313"))
 print('mongo: ', datetime.datetime.now() - time_before_running)
 
 
 time_before_running = datetime.datetime.now()
-print(find_address("0565106VK4706F"))
+print(find_address("1243604VK4184D"))
 print('mongo: ', datetime.datetime.now() - time_before_running)
 
 time_before_running = datetime.datetime.now()
-print(find_address("0565106VK4706F"))
+print(find_address("14038A00900312"))
 print('mongo: ', datetime.datetime.now() - time_before_running)
 
 time_before_running = datetime.datetime.now()
