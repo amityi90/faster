@@ -1,5 +1,4 @@
 import csv
-from venv import create
 import pandas as pd
 import math
 import datetime
@@ -16,7 +15,7 @@ collection = db['small']
 
 
 
-file_name = "web_csv_files\\big.csv"
+file_name = "web_csv_files/big.csv"
 file_url = "http://35.241.167.153/small.csv"
 
 urllib.request.urlretrieve(file_url, file_name)
