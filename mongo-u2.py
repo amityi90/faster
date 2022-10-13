@@ -70,7 +70,7 @@ def push_csv_to_db():
                 collection_name = address['localid'][:letters_index]
             else:
                 collection_name = address['localid'][:3]
-            print(row, '\n', collection_name)
+            print(row, f'\n#{i}\n', '\n', collection_name)
             collection = db[collection_name]
             collection.insert_one(address).inserted_id
             print('\n--------------\n')
