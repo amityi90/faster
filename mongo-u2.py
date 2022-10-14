@@ -99,7 +99,7 @@ def find_address_from_big(address):
 
 # attempts:
 
-push_csv_to_db()
+# push_csv_to_db()
 
 results_file = open('results.txt', 'a')
 

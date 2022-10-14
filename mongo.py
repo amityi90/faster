@@ -9,6 +9,7 @@ import mmap
 from pymongo import MongoClient
 import urllib.request
 import re
+import multiprocessing
 
 
 client = MongoClient()
@@ -76,22 +77,23 @@ file_name = "web_csv_files\\small.csv"
 #         print('\n--------------\n')
 
 
-def find_address(address):
-    collection_name = ''
-    if re.match(r"[0-9]+[A-Z][A-Z]?[0-9]+[A-Z][A-Z]?", address):
-        letters_index = re.search(r"[A-Z][A-Z]?", address)
-        letters_index = letters_index.span()[0]
-        collection_name = address[letters_index:]
-    elif re.match(r"[0-9]+[A-Z][A-Z]?[0-9]+", address):
-        letters_index = re.search(r"[A-Z][A-Z]?", address)
-        letters_index = letters_index.span()[1]
-        collection_name = address[:letters_index]
-    else:
-        collection_name = address[:3]
-    collection = db[collection_name]
-    return collection.find_one({"localid": address})
+# def find_address(address):
+#     collection_name = ''
+#     if re.match(r"[0-9]+[A-Z][A-Z]?[0-9]+[A-Z][A-Z]?", address):
+#         letters_index = re.search(r"[A-Z][A-Z]?", address)
+#         letters_index = letters_index.span()[0]
+#         collection_name = address[letters_index:]
+#     elif re.match(r"[0-9]+[A-Z][A-Z]?[0-9]+", address):
+#         letters_index = re.search(r"[A-Z][A-Z]?", address)
+#         letters_index = letters_index.span()[1]
+#         collection_name = address[:letters_index]
+#     else:
+#         collection_name = address[:3]
+#     collection = db[collection_name]
+#     return collection.find_one({"localid": address})
 
-time_before_running = datetime.datetime.now()
-print(find_address("0565106VK4706F"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
+# time_before_running = datetime.datetime.now()
+# print(find_address("0565106VK4706F"))
+# print('mongo: ', datetime.datetime.now() - time_before_running)
 
+print("Number of cpu : ", multiprocessing.cpu_count())
