@@ -186,7 +186,7 @@ results_file = open('results.txt', 'a')
 
 
 time_before_running = datetime.datetime.now()
-print(find_address("14038A00900312"))
+print(find_address("24147A10105523")
 print('mongo: ', datetime.datetime.now() - time_before_running)
 results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
 
