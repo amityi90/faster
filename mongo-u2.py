@@ -104,89 +104,89 @@ def find_address_from_big(address):
 results_file = open('results.txt', 'a')
 
 
-time_before_running = datetime.datetime.now()
-print(find_address_from_big("14038A00900312"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
-results_file.write(f'at: {datetime.datetime.now()} big search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+# time_before_running = datetime.datetime.now()
+# print(find_address_from_big("14038A00900312"))
+# print('mongo: ', datetime.datetime.now() - time_before_running)
+# results_file.write(f'at: {datetime.datetime.now()} big search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+
+
+# time_before_running = datetime.datetime.now()
+# print(find_address_from_big("14038A00900313"))
+# print('mongo: ', datetime.datetime.now() - time_before_running)
+# results_file.write(f'at: {datetime.datetime.now()} big search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+
+
+# time_before_running = datetime.datetime.now()
+# print(find_address_from_big("14038A00900300"))
+# print('mongo: ', datetime.datetime.now() - time_before_running)
+# results_file.write(f'at: {datetime.datetime.now()} big search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+
+
+# time_before_running = datetime.datetime.now()
+# print(find_address_from_big("14038A00900298"))
+# print('mongo: ', datetime.datetime.now() - time_before_running)
+# results_file.write(f'at: {datetime.datetime.now()} big search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+
+
+# time_before_running = datetime.datetime.now()
+# print(find_address_from_big("14038A00900313"))
+# print('mongo: ', datetime.datetime.now() - time_before_running)
+# results_file.write(f'at: {datetime.datetime.now()} big search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+
+
+# # ^^^^^^^^^^^^^^^^^^^^^^^
+
+# time_before_running = datetime.datetime.now()
+# print(find_address("0565106VK4706F"))
+# print('mongo: ', datetime.datetime.now() - time_before_running)
+# results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+
+
+# time_before_running = datetime.datetime.now()
+# print(find_address("11005A01900057"))
+# print('mongo: ', datetime.datetime.now() - time_before_running)
+# results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+
+
+# time_before_running = datetime.datetime.now()
+# print(find_address("21DS00003183AA"))
+# print('mongo: ', datetime.datetime.now() - time_before_running)
+# results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+
+
+# time_before_running = datetime.datetime.now()
+# print(find_address("02129E4VK4801A"))
+# print('mongo: ', datetime.datetime.now() - time_before_running)
+# results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+
+
+# time_before_running = datetime.datetime.now()
+# print(find_address("02129E4VK4801A"))
+# print('mongo: ', datetime.datetime.now() - time_before_running)
+# results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+
+
+# time_before_running = datetime.datetime.now()
+# print(find_address("14038A00900313"))
+# print('mongo: ', datetime.datetime.now() - time_before_running)
+# results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+
+
+
+# time_before_running = datetime.datetime.now()
+# print(find_address("1243604VK4184D"))
+# print('mongo: ', datetime.datetime.now() - time_before_running)
+# results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+
+
+# time_before_running = datetime.datetime.now()
+# print(find_address("14038A00900312"))
+# print('mongo: ', datetime.datetime.now() - time_before_running)
+# results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
 
 
 time_before_running = datetime.datetime.now()
-print(find_address_from_big("14038A00900313"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
-results_file.write(f'at: {datetime.datetime.now()} big search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
-
-
-time_before_running = datetime.datetime.now()
-print(find_address_from_big("14038A00900300"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
-results_file.write(f'at: {datetime.datetime.now()} big search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
-
-
-time_before_running = datetime.datetime.now()
-print(find_address_from_big("14038A00900298"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
-results_file.write(f'at: {datetime.datetime.now()} big search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
-
-
-time_before_running = datetime.datetime.now()
-print(find_address_from_big("14038A00900313"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
-results_file.write(f'at: {datetime.datetime.now()} big search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
-
-
-# ^^^^^^^^^^^^^^^^^^^^^^^
-
-time_before_running = datetime.datetime.now()
-print(find_address("0565106VK4706F"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
-results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
-
-
-time_before_running = datetime.datetime.now()
-print(find_address("11005A01900057"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
-results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
-
-
-time_before_running = datetime.datetime.now()
-print(find_address("21DS00003183AA"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
-results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
-
-
-time_before_running = datetime.datetime.now()
-print(find_address("02129E4VK4801A"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
-results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
-
-
-time_before_running = datetime.datetime.now()
-print(find_address("02129E4VK4801A"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
-results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
-
-
-time_before_running = datetime.datetime.now()
-print(find_address("14038A00900313"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
-results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
-
-
-
-time_before_running = datetime.datetime.now()
-print(find_address("1243604VK4184D"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
-results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
-
-
-time_before_running = datetime.datetime.now()
-print(find_address("14038A00900312"))
-print('mongo: ', datetime.datetime.now() - time_before_running)
-results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
-
-
-time_before_running = datetime.datetime.now()
-print(find_address("0565106VK4706F"))
+print(find_address(os.config('LOCAL_ID')))
 print('mongo: ', datetime.datetime.now() - time_before_running)
 results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
 

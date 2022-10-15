@@ -13,7 +13,7 @@ class FastExtractor:
         self.csv_url = csv_url
         self.client = MongoClient()
         self.db = self.client['faster']
-        self.csv_file_name = "web_csv_files/big.csv"
+        self.csv_file_name = "web_csv_files\\small.csv"
         self.results_file = open('results.txt', 'a')
 
 
@@ -78,8 +78,12 @@ class FastExtractor:
 
         self.results_file.write(f'\n**********************\n')
 
-addres_session = FastExtractor("http://35.241.167.153/big.csv")
+# addres_session = FastExtractor("http://35.241.167.153/big.csv")
+# addres_session.extract_session()
+
+addres_session = FastExtractor("http://35.241.167.153/small.csv")
 addres_session.extract_session()
+
 
 print('cho')
 
