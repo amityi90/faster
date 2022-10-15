@@ -5,7 +5,7 @@ import os
 from pymongo import MongoClient
 import urllib.request
 import re
-
+from decouple import config
 
 client = MongoClient()
 db = client['faster']
@@ -186,7 +186,7 @@ results_file = open('results.txt', 'a')
 
 
 time_before_running = datetime.datetime.now()
-print(find_address(os.config('LOCAL_ID')))
+print(find_address(config('LOCAL_ID')))
 print('mongo: ', datetime.datetime.now() - time_before_running)
 results_file.write(f'at: {datetime.datetime.now()} search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
 
