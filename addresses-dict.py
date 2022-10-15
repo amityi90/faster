@@ -6,7 +6,7 @@ import urllib.request
 
 
 
-db_file_name = 'small'
+db_file_name = 'big'
 source_file_url = "http://35.241.167.153/big.csv"
 source_file_name = "web_csv_files/big.csv"
 
