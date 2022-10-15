@@ -7,12 +7,7 @@ import urllib.request
 
 
 db_file_name = 'big'
-source_file_url = "http://35.241.167.153/big.csv"
 source_file_name = "web_csv_files/big.csv"
-
-
-def download_csv():
-    urllib.request.urlretrieve(source_file_url, db_file_name)
 
 def push_csv_to_db():
     d = shelve.open(db_file_name, 'c')  
@@ -36,7 +31,6 @@ def push_csv_to_db():
     d.close()             
 
 
-download_csv()
 
 push_csv_to_db()
 
