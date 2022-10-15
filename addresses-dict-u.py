@@ -6,8 +6,8 @@ import urllib.request
 
 
 
-db_file_name = 'big'
-source_file_name = "web_csv_files\\small.csv"
+db_file_name = 'big-file'
+source_file_name = "web_csv_files/big.csv"
 
 def push_csv_to_db():
     d = shelve.open(db_file_name, 'c')  
