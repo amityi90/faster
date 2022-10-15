@@ -36,6 +36,9 @@ def push_csv_to_db():
     d.close()             
 
 
+download_csv()
+
+push_csv_to_db()
 
 
 d = shelve.open(db_file_name, 'r')  
