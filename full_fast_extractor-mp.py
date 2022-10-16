@@ -111,6 +111,27 @@ class FastExtractor:
                 process.start()
                 index += step
                 self.processes.append(process) 
+    
+    def push_csv_to_shelve(self):
+        with open(self.csv_file_name, 'r', encoding="utf8") as file:
+            csvreader = csv.reader(file)
+            d = shelve.open(db_file_name, 'c') 
+            for i, row in enumerate(csvreader):
+                collection_name = ''
+                if i == 0:
+                    continue
+                address = { 
+                    'index' : row[0],
+                    'localid' : row[1],
+                    'table_name' : row[2],
+                    'fulladdress' : row[3],
+                    'city_id' : row[4],
+                }
+                key = address['localid']
+                d[key] = address
+                print(row, f'\n#{i} -- in shelve\n', '\n', collection_name)
+                print('\n--------------\n')
+            d.close()
 
     
 
@@ -192,9 +213,9 @@ class FastExtractor:
 if __name__ == '__main__':
     time_before_running = datetime.datetime.now()
     addres_session = FastExtractor("http://35.241.167.153/big.csv")
-    addres_session.push_csv_to_shelve_mp()
+    addres_session.push_csv_to_shelve()
     addres_session.join_processes()
-    addres_session.push_csv_to_db_mp()
+    addres_session.push_csv_to_db()
     addres_session.join_processes()
     addres_session.find_address_shelve(config('LOCAL_ID'))
     print(addres_session.find_address(config('LOCAL_ID')))
