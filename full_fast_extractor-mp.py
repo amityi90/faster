@@ -10,11 +10,12 @@ from multiprocessing import Process
 import shelve
 from decouple import config
 
+if __name__ == '__main__':
 
-client = MongoClient()
-db = client['faster']
-db_file_name = config('SHELVE_DB_FILE_NAME')
-print(db_file_name)
+    client = MongoClient()
+    db = client['faster']
+    db_file_name = config('SHELVE_DB_FILE_NAME')
+    print(db_file_name)
 
 
 def push_chunk_to_db(lines):
@@ -95,6 +96,7 @@ class FastExtractor:
                 self.processes.append(process)
     
     def push_csv_to_shelve_mp(self):
+        print(self.csv_file_name)
         with open(self.csv_file_name, 'r', encoding="utf8") as file:
             csvreader = csv.reader(file)
             number_of_processes = 100
