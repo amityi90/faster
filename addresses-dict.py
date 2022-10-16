@@ -7,10 +7,10 @@ import urllib.request
 
 
 db_file_name = 'big'
-source_file_name = "web_csv_files\\small.csv"
+source_file_name = "web_csv_files\\big.csv"
 
 def push_csv_to_db():
-    d = shelve.open(db_file_name, 'c')  
+    d = shelve.open(db_file_name, 'c')      
     with open(source_file_name, 'r', encoding="utf8") as file:
         csvreader = csv.reader(file)
         for i, row in enumerate(csvreader):
@@ -32,7 +32,7 @@ def push_csv_to_db():
 
 
 
-push_csv_to_db()
+#  push_csv_to_db()
 
 
 d = shelve.open(db_file_name, 'r')  
