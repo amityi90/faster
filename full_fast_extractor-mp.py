@@ -100,6 +100,7 @@ class FastExtractor:
         with open(self.csv_file_name, 'r', encoding="utf8") as file:
             csvreader = csv.reader(file)
             number_of_processes = 100
+            print(number_of_processes)
             self.lines = list(csvreader)
             print(len(self.lines))
             index = 1
