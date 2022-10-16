@@ -191,8 +191,14 @@ if __name__ == '__main__':
     addres_session = FastExtractor("http://35.241.167.153/small.csv")
     # addres_session.push_csv_to_shelve_mp()
     # addres_session.join_processes()
-    addres_session.find_address_shelve('8888508VK4688H')
-    print(addres_session.find_address('8888508VK4688H'))
+    try:
+        addres_session.find_address_shelve(config('LOCAL_ID'))
+    except:
+        pass
+    try:
+        print(addres_session.find_address(config('LOCAL_ID')))
+    except:
+        pass
 
 
 
