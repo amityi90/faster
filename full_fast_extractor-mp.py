@@ -193,12 +193,12 @@ if __name__ == '__main__':
     # addres_session.join_processes()
     try:
         addres_session.find_address_shelve(config('LOCAL_ID'))
-    except:
-        pass
+    except Exception as e:
+        print(e)
     try:
         print(addres_session.find_address(config('LOCAL_ID')))
-    except:
-        pass
+    except Exception as e:
+        print(e)
 
 
 
