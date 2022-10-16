@@ -1,3 +1,4 @@
+import chunk
 import csv
 import math
 import datetime
@@ -7,6 +8,35 @@ import urllib.request
 import re
 from multiprocessing import Process
 
+client = MongoClient()
+db = client['faster']
+
+def push_chunk(lines):
+        for i, row in enumerate(lines):
+            collection_name = ''
+            if i == 0:
+                continue
+            address = { 
+                'index' : row[0],
+                'localid' : row[1],
+                'table_name' : row[2],
+                'fulladdress' : row[3],
+                'city_id' : row[4],
+            }
+            if re.match(r"[0-9]+[A-Z][A-Z]?[0-9]+[A-Z][A-Z]?", address['localid']):
+                letters_index = re.search(r"[A-Z][A-Z]?", address['localid'])
+                letters_index = letters_index.span()[0]
+                collection_name = address['localid'][letters_index:]
+            elif re.match(r"[0-9]+[A-Z][A-Z]?[0-9]+", address['localid']):
+                letters_index = re.search(r"[A-Z][A-Z]?", address['localid'])
+                letters_index = letters_index.span()[1]
+                collection_name = address['localid'][:letters_index]
+            else:
+                collection_name = address['localid'][:3]
+            print(row, f'\n#{i}\n', '\n', collection_name)
+            collection = db[collection_name]
+            collection.insert_one(address).inserted_id
+            print('\n--------------\n')
 
 
 class FastExtractor:
@@ -33,38 +63,13 @@ class FastExtractor:
             index = 1
             step = int(len(self.lines) / number_of_processes) + len(self.lines) % number_of_processes
             for i in range(number_of_processes):
-                process = Process(target=self.push_chunk, args=(self.lines, index, step))
+                doc_chunk = self.lines[index:index + step]
+                process = Process(target=push_chunk, args=([doc_chunk]))
                 process.start()
                 index += step
                 self.processes.append(process) 
 
-    def push_chunk(self, start_index, step):
-        for i, row in enumerate(self.lines[start_index:start_index + step]):
-            collection_name = ''
-            if i == 0:
-                continue
-            address = { 
-                'index' : row[0],
-                'localid' : row[1],
-                'table_name' : row[2],
-                'fulladdress' : row[3],
-                'city_id' : row[4],
-            }
-            if re.match(r"[0-9]+[A-Z][A-Z]?[0-9]+[A-Z][A-Z]?", address['localid']):
-                letters_index = re.search(r"[A-Z][A-Z]?", address['localid'])
-                letters_index = letters_index.span()[0]
-                collection_name = address['localid'][letters_index:]
-            elif re.match(r"[0-9]+[A-Z][A-Z]?[0-9]+", address['localid']):
-                letters_index = re.search(r"[A-Z][A-Z]?", address['localid'])
-                letters_index = letters_index.span()[1]
-                collection_name = address['localid'][:letters_index]
-            else:
-                collection_name = address['localid'][:3]
-            print(row, f'\n#{i}\n', '\n', collection_name)
-            collection = self.db[collection_name]
-            collection.insert_one(address).inserted_id
-            print('\n--------------\n')
-
+    
 
 
     def join_processes(self):
