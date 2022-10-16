@@ -189,24 +189,12 @@ class FastExtractor:
 if __name__ == '__main__':
     time_before_running = datetime.datetime.now()
     addres_session = FastExtractor("http://35.241.167.153/big.csv")
-    try:
-        addres_session.push_csv_to_shelve_mp()
-        addres_session.join_processes()
-    except Exception as e:
-        print(e)
-    try:
-        addres_session.push_csv_to_db_mp()
-        addres_session.join_processes()
-    except Exception as e:
-        print(e)
-    try:
-        addres_session.find_address_shelve(config('LOCAL_ID'))
-    except Exception as e:
-        print(e)
-    try:
-        print(addres_session.find_address(config('LOCAL_ID')))
-    except Exception as e:
-        print(e)
+    addres_session.push_csv_to_shelve_mp()
+    addres_session.join_processes()
+    addres_session.push_csv_to_db_mp()
+    addres_session.join_processes()
+    addres_session.find_address_shelve(config('LOCAL_ID'))
+    print(addres_session.find_address(config('LOCAL_ID')))
 
 
 
