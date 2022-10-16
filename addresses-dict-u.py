@@ -32,7 +32,7 @@ def push_csv_to_db():
 
 
 
-push_csv_to_db()
+# push_csv_to_db()
 
 
 d = shelve.open(db_file_name, 'r')  
