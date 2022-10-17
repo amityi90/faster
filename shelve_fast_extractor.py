@@ -65,7 +65,8 @@ class FastExtractor:
         localid = 't'
         while localid != 'x':
             localid = input('\nEnter localid or x to exit: \n')
-            print(self.find_address_shelve(localid))
+            if localid != 'x':
+                print(self.find_address_shelve(localid))
 
 if __name__ == '__main__':
     time_before_running = datetime.datetime.now()
