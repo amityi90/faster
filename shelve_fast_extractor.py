@@ -69,7 +69,6 @@ class FastExtractor:
                 self.find_address_shelve(localid)
 
 if __name__ == '__main__':
-    time_before_running = datetime.datetime.now()
     addres_session = FastExtractor("http://35.241.167.153/big.csv")
     # addres_session.push_csv_to_shelve()
     # addres_session.join_processes()
@@ -79,6 +78,5 @@ if __name__ == '__main__':
 
 
 
-    print(f'\n\n     ----- that took: {datetime.datetime.now() - time_before_running}-----\n\n     cho')
+    print(f'\n\n     ----- -----\n\n     cho')
 
-608095
