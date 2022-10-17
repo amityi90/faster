@@ -52,7 +52,7 @@ class FastExtractor:
         time_before_running = datetime.datetime.now()
         data = d[address]
         print(data)
-        print('shelve: ', datetime.datetime.now() - time_before_running)
+        print('\nextraction time: ', datetime.datetime.now() - time_before_running)
         results_file.write(f'at: {datetime.datetime.now()} | extraction time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
         results_file.write(f'\n**********************\n')
         results_file.close()
