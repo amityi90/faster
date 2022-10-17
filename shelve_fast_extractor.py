@@ -53,7 +53,7 @@ class FastExtractor:
         data = d[address]
         print(data)
         print('shelve: ', datetime.datetime.now() - time_before_running)
-        results_file.write(f'at: {datetime.datetime.now()} big search time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
+        results_file.write(f'at: {datetime.datetime.now()} | extraction time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
         results_file.write(f'\n**********************\n')
         results_file.close()
         d.close()    
@@ -65,12 +65,7 @@ class FastExtractor:
         localid = 't'
         while localid != 'x':
             localid = input('\nEnter localid or x to exit: \n')
-            time_before_running = datetime.datetime.now()
             print(self.find_address_shelve(localid))
-            print('extraction time: ', datetime.datetime.now() - time_before_running)
-            self.results_file.write(f'at: {datetime.datetime.now()} | extraction time: {datetime.datetime.now() - time_before_running}\n--------------------------------\n')
-
-        self.results_file.write(f'\n**********************\n')
 
 if __name__ == '__main__':
     time_before_running = datetime.datetime.now()
