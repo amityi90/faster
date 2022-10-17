@@ -72,7 +72,7 @@ class FastExtractor:
 
 if __name__ == '__main__':
     addres_session = FastExtractor("http://35.241.167.153/big.csv")
-    addres_session.download_csv()     # download csv file from csv_url
-    addres_session.push_csv_to_shelve_db()   # creating db files  
+    # addres_session.download_csv()     # download csv file from csv_url
+    # addres_session.push_csv_to_shelve_db()   # creating db files  
     addres_session.extract_session()    # adderesses search by local id session
 
